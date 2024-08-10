@@ -54,7 +54,7 @@ const UpdateData = () => {
                                     name="title"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.title} placeholder='Title here' />
+                                        <Input defaultValue={existingData?.title} className='p-[15px]' placeholder='Title here' />
                                     </div>
 
                                 </Form.Item>
@@ -63,7 +63,7 @@ const UpdateData = () => {
                                     name="sector"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.sector} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.sector} placeholder='Title here' />
                                     </div>
 
                                 </Form.Item>
@@ -73,7 +73,7 @@ const UpdateData = () => {
                                     name="topic"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.topic} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.topic} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
                                 <Form.Item
@@ -81,7 +81,7 @@ const UpdateData = () => {
                                     name="insight"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.insight} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.insight} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
                                 <Form.Item
@@ -89,7 +89,7 @@ const UpdateData = () => {
                                     name="region"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.region} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.region} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
                                 <Form.Item
@@ -97,7 +97,7 @@ const UpdateData = () => {
                                     name="country"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.country} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.country} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -107,7 +107,7 @@ const UpdateData = () => {
                                     name="source"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.source} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.source} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -118,7 +118,7 @@ const UpdateData = () => {
                                     name="pestle"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.pestle} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.pestle} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -129,7 +129,7 @@ const UpdateData = () => {
                                     name="intensity"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.intensity} placeholder='Title here' />
+                                        <Input min={0} max={1e9 + 1} className='p-[15px]' defaultValue={existingData?.intensity} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
                                 <Form.Item
@@ -137,7 +137,7 @@ const UpdateData = () => {
                                     name="impact"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.impact} placeholder='Title here' />
+                                        <Input min={0} max={1e9 + 1} className='p-[15px]' defaultValue={existingData?.impact} placeholder='Title here' />
                                     </div>
 
                                 </Form.Item>
@@ -146,7 +146,7 @@ const UpdateData = () => {
                                     name="relevance"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.relevance} placeholder='Title here' />
+                                        <Input min={0} max={1e9 + 1} className='p-[15px]' defaultValue={existingData?.relevance} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
                                 <Form.Item
@@ -154,7 +154,7 @@ const UpdateData = () => {
                                     name="likelihood"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.likelihood} placeholder='Title here' />
+                                        <Input min={0} max={1e9 + 1} className='p-[15px]' defaultValue={existingData?.likelihood} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -163,7 +163,7 @@ const UpdateData = () => {
                                     name="url"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.url} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.url} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -172,7 +172,7 @@ const UpdateData = () => {
                                     name="added"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.added} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.added} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
@@ -181,7 +181,7 @@ const UpdateData = () => {
                                     name="published"
                                 >
                                     <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
-                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.published} placeholder='Title here' />
+                                        <Input className='p-[15px]' defaultValue={existingData?.published} placeholder='Title here' />
                                     </div>
                                 </Form.Item>
 
