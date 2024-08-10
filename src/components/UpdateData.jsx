@@ -10,8 +10,9 @@ const UpdateData = () => {
     const [addData] = useAddDataMutation();
     const { isLoading, data: existingData } = useGetDataByIdQuery(id);
     if (isLoading) {
-        return <p></p>;
+        return <Spin />;
     }
+    console.log(existingData);
     const onFinish = async (values) => {
         console.log({ id, ...values });
         await updateData({ id, ...values });
@@ -25,12 +26,11 @@ const UpdateData = () => {
         <div>
             <>
                 <div className=''>
-                    <h1 className='text-start ms-8 mt-12 text-3xl'>Update Data</h1>
+                    <h1 className='text-start ms-8 mt-12 text-3xl'>Add Data</h1>
                     <div className='border p-10 m-7 rounded-lg bg-gray-200'>
                         <Form
                             name="basic"
                             layout="vertical"
-                            initialValues={existingData}
                             labelCol={{
                                 span: 8,
                             }}
@@ -40,47 +40,65 @@ const UpdateData = () => {
                             style={{
                                 maxWidth: 1600,
                             }}
+                            initialValues={{
+                                remember: true,
+                            }}
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
 
-                            <div className='grid grid-cols-4 gap-x-20'>
+                            <div className='grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-20'>
                                 <Form.Item
                                     label="Title"
-                                    name="title">
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.title} placeholder='Title here' />
+                                    name="title"
+                                >
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.title} placeholder='Title here' />
+                                    </div>
+
                                 </Form.Item>
                                 <Form.Item
                                     label="Sector"
                                     name="sector"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.sector} placeholder='Sector here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.sector} placeholder='Title here' />
+                                    </div>
+
                                 </Form.Item>
 
                                 <Form.Item
                                     label="Topic"
                                     name="topic"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} initialValues defaultValue={existingData?.topic} placeholder='Topic here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.topic} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
                                 <Form.Item
                                     label="Insight"
                                     name="insight"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.insight} placeholder='Insight here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.insight} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
                                 <Form.Item
                                     label="Region"
                                     name="region"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.region} placeholder='Region here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.region} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
                                 <Form.Item
                                     label="Country"
                                     name="country"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.country} placeholder='Country here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.country} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
 
@@ -88,7 +106,9 @@ const UpdateData = () => {
                                     label="Source"
                                     name="source"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.source} placeholder='Source here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.source} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
 
@@ -97,7 +117,9 @@ const UpdateData = () => {
                                     label="Pestle"
                                     name="pestle"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.pestle} placeholder='Pestle here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.pestle} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
 
@@ -106,51 +128,72 @@ const UpdateData = () => {
                                     label="Intensity"
                                     name="intensity"
                                 >
-                                    <InputNumber min={0} max={1e9 + 1} defaultValue={existingData?.intensity} style={{ width: '400px', padding: '15px' }} placeholder='Intensity here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.intensity} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
                                 <Form.Item
                                     label="Impact"
                                     name="impact"
                                 >
-                                    <InputNumber min={0} max={1e9 + 1} defaultValue={existingData?.impact} style={{ width: '400px', padding: '15px' }} placeholder='Impact here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.impact} placeholder='Title here' />
+                                    </div>
+
                                 </Form.Item>
                                 <Form.Item
                                     label="Relevance"
                                     name="relevance"
                                 >
-                                    <InputNumber min={0} max={1e9 + 1} defaultValue={existingData?.relevance} style={{ width: '400px', padding: '15px' }} placeholder='Relevance here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.relevance} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
                                 <Form.Item
                                     label="Likelihood"
                                     name="likelihood"
                                 >
-                                    <InputNumber min={0} max={1e9 + 1} defaultValue={existingData?.likelihood} style={{ width: '400px', padding: '15px' }} placeholder='Likelihood here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input min={0} max={1e9 + 1} style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.likelihood} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
                                 <Form.Item
                                     label="Url"
                                     name="url"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.url} placeholder='Url here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.url} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
                                 <Form.Item
                                     label="Added"
                                     name="added"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.added} placeholder='Added here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.added} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
 
                                 <Form.Item
                                     label="Published"
                                     name="published"
                                 >
-                                    <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.published} placeholder='Published here' />
+                                    <div className='me-[165px] lg:mr-[0px] w-[235px] lg:w-[400px]'>
+                                        <Input style={{ width: '400px', padding: '15px' }} defaultValue={existingData?.published} placeholder='Title here' />
+                                    </div>
                                 </Form.Item>
+
+
+
                             </div>
+
                             <Button style={{ width: '100%', padding: '25px', fontSize: '17px' }} type="primary" htmlType="submit">
                                 Submit
                             </Button>
+
+
                         </Form>
                     </div>
                 </div>
