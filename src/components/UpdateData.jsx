@@ -10,7 +10,7 @@ const UpdateData = () => {
     const [addData] = useAddDataMutation();
     const { isLoading, data: existingData } = useGetDataByIdQuery(id);
     if (isLoading) {
-        return <Spin />;
+        return <p></p>;
     }
     const onFinish = async (values) => {
         console.log({ id, ...values });

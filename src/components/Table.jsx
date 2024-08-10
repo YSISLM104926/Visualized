@@ -4,6 +4,7 @@ import { Button, Input, Space, Spin, Table } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { useDeleteDataMutation, useGetDataQuery, useUpdateDataMutation } from '../redux/api/baseApi';
 import { useNavigate, useNavigation } from 'react-router-dom';
+import { toast } from 'sonner';
 
 const TableApp = () => {
   const [searchText, setSearchText] = useState('');
@@ -23,15 +24,8 @@ const TableApp = () => {
   });
 
   /*
-1. ADD
-2. Update
-3. Fix Table 
-4. Add Graph - 2
-5. JWT auth
-7. filter graph
+    backend MVC
   */
-
-  //
   const navigate = useNavigate();
   const handleDelete = async (id) => {
     console.log(id);
@@ -39,6 +33,7 @@ const TableApp = () => {
       try {
         const res = await deleteData(id);
         console.log('Deleted:', res);
+        toast.success(`${id} deleted successfully`);
         // navigate(0);
       } catch (err) {
         console.error('Failed to delete the item:', err);
@@ -60,7 +55,7 @@ const TableApp = () => {
     setSearchText('');
   };
   if (isLoading) {
-    return <Spin />
+    return <p></p>;
   }
   const getColumnSearchProps = (dataIndex) => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
@@ -146,7 +141,7 @@ const TableApp = () => {
         <Highlighter
           highlightStyle={{
             backgroundColor: '#ffc069',
-            padding: 0,
+            padding: 12,
           }}
           searchWords={[searchText]}
           autoEscape
@@ -214,7 +209,13 @@ const TableApp = () => {
   return (
     < div >
       <h1 className='text-start text-3xl mt-12 font-bold ms-4'>Table Results</h1>
-      <Table columns={columns} dataSource={result} scroll={{ x: "max-content" }} />
+      <Table columns={columns} dataSource={result} scroll={{ x: "max-content" }}
+        pagination={{
+          pageSize: 5,
+          pageSizeOptions: [1, 2, 3, 4, 5, 10, 20], // Options for the user to choose from
+          showSizeChanger: true, // Allows user to change page size
+        }}
+      />
     </div >
   );
 };

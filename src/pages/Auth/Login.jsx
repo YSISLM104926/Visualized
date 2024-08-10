@@ -21,6 +21,8 @@ const Login = () => {
         <>
             <Navbar />
             <div className='flex flex-col justify-center items-center h-screen'>
+            <p>Email: testadmin12@gmail.com</p>
+            <p>Password: testadmin12</p>
                 <div className='border p-12 rounded-lg bg-gray-200 w-96 lg:w-1/4'>
                     <h1 className='mb-8 text-2xl'>Login</h1>
                     <Form

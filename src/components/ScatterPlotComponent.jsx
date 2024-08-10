@@ -12,7 +12,7 @@ const ScatterPlotComponent = () => {
   // Extract data for the chart
   const { data, isLoading } = useGetDataQuery();
   if (isLoading) {
-    return <Spin />
+    return <p></p>;
   }
   
   const scatterData = data.map(item => ({

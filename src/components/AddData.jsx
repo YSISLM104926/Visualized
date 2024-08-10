@@ -7,7 +7,7 @@ const AddData = () => {
     const navigate = useNavigate();
     const [addData, { isLoading }] = useAddDataMutation();
     if (isLoading) {
-        return <Spin />;
+        return <p></p>;
     }
     const onFinish = async (values) => {
         await addData(values);

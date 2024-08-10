@@ -41,7 +41,7 @@ const MyAreaChart = () => {
   const { data: sampleData, isLoading } = useGetDataQuery();
   
   if (isLoading) {
-    return <Spin />;
+    return <p></p>;
   }
 
   // Flatten the data if it is nested
