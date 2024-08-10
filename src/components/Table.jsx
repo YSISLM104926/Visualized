@@ -212,7 +212,7 @@ const TableApp = () => {
       <Table columns={columns} dataSource={result} scroll={{ x: "max-content" }}
         pagination={{
           pageSize: 5,
-          pageSizeOptions: [1, 2, 3, 4, 5, 10, 20], // Options for the user to choose from
+          pageSizeOptions: [ 5], // Options for the user to choose from
           showSizeChanger: true, // Allows user to change page size
         }}
       />
